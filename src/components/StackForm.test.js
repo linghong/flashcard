@@ -24,4 +24,14 @@ describe('StackForm', ()=>{
 	it ('render a button to submit the card', ()=>{
 		expect(stackForm.find('Button').at(1).props().children).toEqual('Save and Add the Stack');
 	});
+
+	describe('and updating the title', ()=>{
+		beforeEach(()=>{
+			stackForm.find('FormControl').simulate('change', {target: {value: 'change title'}});
+		});
+		it('update the title in the state', ()=>{			
+			expect(stackForm.state().title).toEqual('change title');
+		});
+	});
+
 })
