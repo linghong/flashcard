@@ -34,4 +34,20 @@ describe('StackForm', ()=>{
 		});
 	});
 
+	describe('when adding a new card', ()=>{
+		beforeEach(()=>{
+			stackForm.find('Button').at(0).simulate('click');
+		});
+		it('add a new card to the state', ()=>{
+			expect(stackForm.state().cards.length).toEqual(1);
+		});
+
+		it('renders the prompt section', ()=>{
+			expect(stackForm.find('ControlLabel').at(1).props().children).toEqual('Prompt:');
+		}); 
+
+		it('renders the Answer section', ()=>{
+			expect(stackForm.find('ControlLabel').at(2).props().children).toEqual('Answer:');
+		});
+	});
 })
