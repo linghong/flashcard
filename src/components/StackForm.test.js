@@ -2,35 +2,45 @@ import React, { Component } from 'react';
 import { shallow } from 'enzyme';
 import { StackForm } from  './StackForm';
 
+const chTitle = 'change title';
+const chPrompt ='change prompt';
+const chAnswer = 'change answer';
+
 describe('StackForm', ()=>{
 	const stackForm = shallow(<StackForm />);
 
-	it('renders the form title', ()=>{
-		expect(stackForm.find('h4').at(1).text()).toEqual('Create a New Stack');
-	});
+	const changeFormControl=(index, val)=>{
+		stackForm.find('FormControl').at(index).simulate('change', {target: {value: val}});
+	}
 
-	it('renders a link home', ()=>{
-		expect(stackForm.find('Link h4').text()).toEqual('Home');
-	});
+	describe('it render the structure as expected', ()=>{
+		it('renders the form title', ()=>{
+			expect(stackForm.find('h4').at(1).text()).toEqual('Create a New Stack');
+		});
 
-	it('renders a Form Component', ()=>{
-		expect(stackForm.find('Form').exists()).toBe(true);
-	});
+		it('renders a link home', ()=>{
+			expect(stackForm.find('Link h4').text()).toEqual('Home');
+		});
 
-	it('render a button to add a new card', ()=>{
-		expect(stackForm.find('Button').at(0).props().children).toEqual('Add Card');
-	});
+		it('renders a Form Component', ()=>{
+			expect(stackForm.find('Form').exists()).toBe(true);
+		});
 
-	it ('render a button to submit the card', ()=>{
-		expect(stackForm.find('Button').at(1).props().children).toEqual('Save and Add the Stack');
-	});
+		it('render a button to add a new card', ()=>{
+			expect(stackForm.find('Button').at(0).props().children).toEqual('Add Card');
+		});
 
+		it ('render a button to submit the card', ()=>{
+			expect(stackForm.find('Button').at(1).props().children).toEqual('Save and Add the Stack');
+		});
+	});
+	
 	describe('and updating the title', ()=>{
 		beforeEach(()=>{
-			stackForm.find('FormControl').simulate('change', {target: {value: 'change title'}});
+			changeFormControl(0, chTitle);
 		});
 		it('update the title in the state', ()=>{			
-			expect(stackForm.state().title).toEqual('change title');
+			expect(stackForm.state().title).toEqual(chTitle);
 		});
 	});
 
@@ -56,24 +66,22 @@ describe('StackForm', ()=>{
 		});
 
 		describe('and updating the card prompt', ()=>{
-			beforeEach(()=>{
-				stackForm.find('FormControl').at(1).simulate('change', {target: {value:'change prompt'}});
+			beforeEach(()=>{ 
+				changeFormControl(1, chPrompt); 
 			});
 			it('update the prompt in the state', ()=>{
 				console.log(stackForm.state());
-				expect(stackForm.state().cards[0].prompt).toEqual('change prompt');
+				expect(stackForm.state().cards[0].prompt).toEqual(chPrompt);
 			});
 		});
 
 		describe('and updating the card answer', ()=>{
 			 beforeEach(()=>{
-			 	stackForm.find('FormControl').at(2).simulate('change', {
-			 		target: {value: 'change answer'}
-			 	});
+			 	changeFormControl(2, chAnswer);
 			 });
 
 			 it('updae the answer in the state', ()=>{
-			 	expect(stackForm.state().cards[0].answer).toEqual('change answer');
+			 	expect(stackForm.state().cards[0].answer).toEqual(chAnswer);
 			 });
 		});
 	});
