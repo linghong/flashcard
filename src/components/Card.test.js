@@ -19,5 +19,21 @@ describe('Card', ()=>{
 
 	it('renders the card answer', ()=>{
 		expect(card.find('.card-answer h4').text()).toEqual(props.card.answer);
-	})
+	});
+
+	it('applies the `text-hidden` class to the card answer', ()=>{
+		expect(card.find('.card-answer h4').hasClass('text-hidden')).toBe(true);
+	});
+
+	describe('when clicking on the card', ()=>{
+		beforeEach(()=>card.simulate('click'));
+
+		it('updates `reveal` to be `true`', ()=>{
+			expect(card.state().reveal).toBe(true);
+		});
+
+		it('applies the `text-revealed` class to the card answer', ()=>{
+			expect(card.find('.card-answer h4').hasClass('text-revealed')).toBe(true);
+		});
+	});
 });
