@@ -11,4 +11,8 @@ describe('root reducer', ()=>{
     expect(rootReducer({}, {type: actions.SET_STACK, stack})).toEqual({stack, stacks:[]});
   });
 
+  it('loads stacks', ()=>{
+    expect(rootReducer({}, {type: actions.LOAD_STACKS, stacks})).toEqual({stack: {}, stacks});
+  });
+
 })
