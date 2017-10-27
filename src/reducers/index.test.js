@@ -6,4 +6,9 @@ describe('root reducer', ()=>{
   it('returns the initial state', ()=>{
     expect(rootReducer({}, {})).toEqual({stack:{}, stacks: []});
   });
+
+  it('sets the main stack', ()=>{
+    expect(rootReducer({}, {type: actions.SET_STACK, stack})).toEqual({stack, stacks:[]});
+  });
+
 })
