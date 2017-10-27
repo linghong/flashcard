@@ -16,7 +16,7 @@ describe('root reducer', ()=>{
   });
 
   it ('adds a stack', ()=>{
-    expect(rootReducer({}, {type: actions.ADD_STACK, stack})).toEqual({stack:{}, stacks: [stack]});
+    const testStack = {title: 'data', cards:[]}
+    expect(rootReducer({}, {type: actions.ADD_STACK, stack: testStack})).toEqual({stack:{}, stacks: [{...testStack, id: 0}]});
   });
-
-})
+});
