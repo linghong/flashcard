@@ -1,7 +1,9 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import { Stack } from './Stack';
 import { stack } from '../data/fixtures';
+import renderer from 'react-test-renderer';
 
 const props = { stack };
 
@@ -19,4 +21,14 @@ describe('Stack', ()=> {
 	it('renders the correct number of cards', ()=>{
 		expect(stack.find('Card').length).toEqual(props.stack.cards.length);
 	});
+});
+
+test('snapshot test for Stack', ()=>{
+	const component = renderer.create(
+		<MemoryRouter >
+			<Stack {...props} />
+		</MemoryRouter >
+	);
+	const tree=component.toJSON();
+	expect(tree).toMatchSnapshot();
 });
