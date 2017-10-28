@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for StackList 1`] = `
+<div>
+  <a
+    href="/stack"
+    onClick={[Function]}
+  >
+    <h4>
+      test title 0
+    </h4>
+  </a>
+  <a
+    href="/stack"
+    onClick={[Function]}
+  >
+    <h4>
+      test title 1
+    </h4>
+  </a>
+</div>
+`;
