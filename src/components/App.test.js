@@ -1,6 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import renderer from 'react-test-renderer';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../reducers';
 
+import { shallow } from 'enzyme';
 import App from './App';
 
 describe ('App', ()=>{
@@ -17,5 +22,18 @@ describe ('App', ()=>{
 		expect(app.find('Link h4').text()).toEqual('Create a New Stack');
 	});
 });
+
+test('snapshot test for App', ()=>{
+	const store = createStore(rootReducer);
+	const component =renderer.create(
+		<Provider store={store}>
+		<MemoryRouter>
+			<App />
+		</MemoryRouter>
+		</Provider>
+	);
+	const tree=component.toJSON();
+	expect(tree).toMatchSnapshot();
+})
 
 

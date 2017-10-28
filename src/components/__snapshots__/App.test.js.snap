@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for App 1`] = `
+<div>
+  <h2>
+    Flashcard Pro
+  </h2>
+  <hr />
+  <div>
+    <a
+      href="/stack"
+      onClick={[Function]}
+    >
+      <h4>
+        State Abbreviations
+      </h4>
+    </a>
+    <a
+      href="/stack"
+      onClick={[Function]}
+    >
+      <h4>
+        Computer Science Basics
+      </h4>
+    </a>
+  </div>
+  <hr />
+  <a
+    href="stack_form"
+    onClick={[Function]}
+  >
+    <h4>
+      Create a New Stack
+    </h4>
+  </a>
+</div>
+`;
