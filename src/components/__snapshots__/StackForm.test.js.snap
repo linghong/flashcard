@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for StackForm 1`] = `
+<div>
+  <a
+    className="link-home"
+    href="/"
+    onClick={[Function]}
+  >
+    <h4>
+      Home
+    </h4>
+  </a>
+  <h4>
+    Create a New Stack
+  </h4>
+  <br />
+  <form
+    className="form-inline"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor={undefined}
+      >
+        Title:
+      </label>
+       
+      <input
+        className="form-control"
+        id={undefined}
+        onChange={[Function]}
+        type={undefined}
+      />
+    </div>
+  </form>
+  <br />
+  <button
+    className="btn btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Add Card
+  </button>
+   
+  <button
+    className="btn btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Save and Add the Stack
+  </button>
+</div>
+`;

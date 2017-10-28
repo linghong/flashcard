@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { render }from 'react-dom';
+import App from './App';
+import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import { StackForm } from  './StackForm';
+import renderer from 'react-test-renderer';
 
 const chTitle = 'change title';
 const chPrompt ='change prompt';
@@ -85,4 +89,15 @@ describe('StackForm', ()=>{
 			 });
 		});
 	});
+});
+
+test('snapshot test for StackForm', ()=>{
+	const component = renderer.create(
+	    <MemoryRouter >
+	      <StackForm />
+	    </MemoryRouter>
+  	);	
+	const tree=component.toJSON();
+	expect(tree).toMatchSnapshot();
+
 });
