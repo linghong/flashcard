@@ -1,9 +1,10 @@
 import React, { Componet } from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
+import renderer from 'react-test-renderer';
 
 const props ={
-	card: { prompt: 'test prompt', answer: 'test andwer'}
+	card: { prompt: 'test prompt', answer: 'test answer'}
 };
 
 describe('Card', ()=>{
@@ -36,4 +37,10 @@ describe('Card', ()=>{
 			expect(card.find('.card-answer h4').hasClass('text-revealed')).toBe(true);
 		});
 	});
+});
+
+test ('Snapshot test', ()=>{
+	const component =renderer.create(<Card {...props} />);
+	const tree = component.toJSON();
+	expect(tree).toMatchSnapshot();
 });

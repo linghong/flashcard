@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test 1`] = `
+<div
+  className="card"
+  onClick={[Function]}
+>
+  <div
+    className="card-prompt"
+  >
+    <h4>
+      test prompt
+    </h4>
+  </div>
+  <div
+    className="card-answer"
+  >
+    <h4
+      className="text-hidden"
+    >
+      test answer
+    </h4>
+  </div>
+</div>
+`;

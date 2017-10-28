@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import App from './App';
 
 describe ('App', ()=>{
@@ -15,4 +16,6 @@ describe ('App', ()=>{
 	it('render a link to create anew stack', ()=>{
 		expect(app.find('Link h4').text()).toEqual('Create a New Stack');
 	});
-})
+});
+
+
