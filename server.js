@@ -1,4 +1,5 @@
 const config = require('./config');
+const apiRouter = require('./api');
 const express = require('express');
 const fs = require('fs');
 
@@ -7,6 +8,8 @@ const server = express();
 server.get('/', (req, res)=>{
 	res.send('Hello!\n');
 });
+
+server.use('/api', apiRouter);
 
 /*	
 //without using middle ware
