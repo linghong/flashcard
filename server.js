@@ -1,8 +1,9 @@
-import http from 'http';
+import config from './config';
+import express from 'express';
 
-const server = http.createServer();
+const server = express();
 
-server.on('request', (req, res)=>{
+server.get('/', (req, res)=>{
 	res.write('Hello!\n');
 	setTimeout(()=>{
 		res.write('hello again\n');
@@ -10,4 +11,6 @@ server.on('request', (req, res)=>{
 	}, 3000);
 });
 
-server.listen(8080);
+server.listen(config.port, ()=>{
+	console.info('Express is listening on port ', config.port);
+});
