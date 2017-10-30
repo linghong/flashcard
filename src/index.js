@@ -7,7 +7,6 @@ import rootReducer from './reducers';
 import App from './components/App';
 import Stack from './components/Stack';
 import StackForm from './components/StackForm';
-//import { setStack } from './actions';
 import './index.css';
 
 const store = createStore(rootReducer);
