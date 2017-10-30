@@ -5,12 +5,13 @@ const fs = require('fs');
 
 const server = express();
 
+server.set('view engine', 'ejs');
+
 server.get('/', (req, res)=>{
-	res.send('Hello!\n');
+	res.render('index');
 });
 
 server.use('/api', apiRouter);
-
 /*	
 //without using middle ware
 //The below code is the way to fetch file and display in the browser 
