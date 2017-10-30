@@ -22,7 +22,7 @@ export class StackForm extends Component {
     this.setState({ cards });
   }
 
-  updateCardPart(event, index, part) {
+  updateCardPart=(event, index, part)=>{
     const { cards } = this.state;
     
     cards[index][part] = event.target.value;
