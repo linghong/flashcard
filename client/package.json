@@ -2,6 +2,11 @@
   "name": "flashcardpro",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/auth/google": {
+      "target" : "http://localhost:5000"
+    }
+  },
   "devDependencies": {
     "enzyme": "^2.9.1",
     "react-scripts": "1.0.11",

@@ -5,6 +5,7 @@ import StackList from './StackList';
 const App = () => {
   return (
     <div>
+      <h2> <a href="/auth/google">Loginin</a></h2>
       <h2>Flashcard Pro</h2>
       <hr/>
       <StackList />
