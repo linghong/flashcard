@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client"
   },
   "author": "",
   "license": "ISC",
