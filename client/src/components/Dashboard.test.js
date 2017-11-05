@@ -6,29 +6,29 @@ import { Provider } from 'react-redux';
 import rootReducer from '../reducers';
 
 import { shallow } from 'enzyme';
-import App from './App';
+import Dashboard from './Dashboard';
 
-describe ('App', ()=>{
-	const app = shallow(<App/>);
+describe ('Dashboard', ()=>{
+	const dashboard = shallow(<Dashboard/>);
 	it ('render the `Flashcard Pro` title', ()=>{
-		expect(app.find('h2').text()).toEqual('Flashcard Pro');
+		expect(dashboard.find('h2').text()).toEqual('Flashcard Pro');
 	});
 
 	it('renders the Stacklist', ()=>{
-		expect(app.find('Connect(StackList)').exists()).toBe(true);
+		expect(dashboard.find('Connect(StackList)').exists()).toBe(true);
 	});
 
 	it('render a link to create anew stack', ()=>{
-		expect(app.find('Link h4').text()).toEqual('Create a New Stack');
+		expect(dashboard.find('Link h4').text()).toEqual('Create a New Stack');
 	});
 });
 
-test('snapshot test for App', ()=>{
+test('snapshot test for Dashboard', ()=>{
 	const store = createStore(rootReducer);
 	const component =renderer.create(
 		<Provider store={store}>
 		<MemoryRouter>
-			<App />
+			<Dashboard />
 		</MemoryRouter>
 		</Provider>
 	);

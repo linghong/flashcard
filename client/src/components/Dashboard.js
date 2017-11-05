@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StackList from './StackList';
 import Header from './Header';
 
-const App = () => {
+const Dashboard = () => {
   return (
     <div>
       <Header />
@@ -15,4 +15,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default Dashboard;
