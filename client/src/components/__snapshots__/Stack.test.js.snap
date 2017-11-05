@@ -2,15 +2,6 @@
 
 exports[`snapshot test for Stack 1`] = `
 <div>
-  <a
-    className="link-home"
-    href="/"
-    onClick={[Function]}
-  >
-    <h4>
-      Home
-    </h4>
-  </a>
   <h3>
     test title 0
   </h3>

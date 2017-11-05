@@ -6,8 +6,6 @@ import Header from './Header';
 const Dashboard = () => {
   return (
     <div>
-      <Header />
-      <hr/>
       <StackList />
       <hr />
       <Link to='stack_form'><h4>Create a New Card Stack</h4></Link>

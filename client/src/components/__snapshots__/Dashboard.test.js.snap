@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot test for App 1`] = `
+exports[`snapshot test for Dashboard 1`] = `
 <div>
-  <h2>
-    Flashcard Pro
-  </h2>
-  <hr />
   <div>
+    <h3>
+      List of Flash Cards
+    </h3>
     <a
       href="/stack"
       onClick={[Function]}
@@ -30,7 +29,7 @@ exports[`snapshot test for App 1`] = `
     onClick={[Function]}
   >
     <h4>
-      Create a New Stack
+      Create a New Card Stack
     </h4>
   </a>
 </div>

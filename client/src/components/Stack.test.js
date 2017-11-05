@@ -14,10 +14,6 @@ describe('Stack', ()=> {
 		expect(stack.find('h3').text()).toEqual(props.stack.title);
 	});
 
-	it('renders the Link home',()=>{
-		expect(stack.find('Link h4').text()).toEqual('Home');
-	});
-
 	it('renders the correct number of cards', ()=>{
 		expect(stack.find('Card').length).toEqual(props.stack.cards.length);
 	});

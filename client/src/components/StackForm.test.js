@@ -18,11 +18,7 @@ describe('StackForm', ()=>{
 
 	describe('it render the structure as expected', ()=>{
 		it('renders the form title', ()=>{
-			expect(stackForm.find('h4').at(1).text()).toEqual('Create a New Stack');
-		});
-
-		it('renders a link home', ()=>{
-			expect(stackForm.find('Link h4').text()).toEqual('Home');
+			expect(stackForm.find('h4').at(0).text()).toEqual('Create a New Stack');
 		});
 
 		it('renders a Form Component', ()=>{

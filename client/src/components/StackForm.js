@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 import { addStack } from '../actions';
 
@@ -37,9 +36,6 @@ export class StackForm extends Component {
   render() {
     return (
       <div>
-        <Link to='/' className='link-home'>
-          <h4>Home</h4>
-        </Link>
         <h4>Create a New Stack</h4>
         <br />
         <Form inline>

@@ -10,16 +10,12 @@ import Dashboard from './Dashboard';
 
 describe ('Dashboard', ()=>{
 	const dashboard = shallow(<Dashboard/>);
-	it ('render the `Flashcard Pro` title', ()=>{
-		expect(dashboard.find('h2').text()).toEqual('Flashcard Pro');
-	});
-
 	it('renders the Stacklist', ()=>{
 		expect(dashboard.find('Connect(StackList)').exists()).toBe(true);
 	});
 
-	it('render a link to create anew stack', ()=>{
-		expect(dashboard.find('Link h4').text()).toEqual('Create a New Stack');
+	it('render a link to create a new stack', ()=>{
+		expect(dashboard.find('Link h4').text()).toEqual('Create a New Card Stack');
 	});
 });
 

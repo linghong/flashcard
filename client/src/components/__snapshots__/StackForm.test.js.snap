@@ -2,15 +2,6 @@
 
 exports[`snapshot test for StackForm 1`] = `
 <div>
-  <a
-    className="link-home"
-    href="/"
-    onClick={[Function]}
-  >
-    <h4>
-      Home
-    </h4>
-  </a>
   <h4>
     Create a New Stack
   </h4>
