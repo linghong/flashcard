@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StackList from './StackList';
+import Header from './Header';
 
 const App = () => {
   return (
     <div>
-      <h2> <a href="/auth/google">Loginin</a></h2>
-      <h2>Flashcard Pro</h2>
+      <Header />
       <hr/>
       <StackList />
       <hr />
-      <Link to='stack_form'><h4>Create a New Stack</h4></Link>
+      <Link to='stack_form'><h4>Create a New Card Stack</h4></Link>
     </div>
   )
 }

@@ -12,6 +12,7 @@ export class StackList extends Component {
   render() {
     return (
       <div>
+        <h3>List of Flash Cards</h3>
         {
           this.props.stacks.map(stack => {
             return (
