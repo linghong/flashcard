@@ -14,7 +14,8 @@ class Header extends Component {
 		    </Navbar.Header>
 		    <Navbar.Collapse>
 		      <Nav>
-		        <NavItem eventKey={1}><Link to='/stack_form'>Add New Card Stack</Link></NavItem>
+		      	<NavItem eventKey={1}><Link to='/dashboard'>Dashboard</Link></NavItem>
+		        <NavItem eventKey={2}><Link to='/stack_form'>Add New Card Stack</Link></NavItem>
 		        <NavDropdown eventKey={3} title="My Account" id="basic-nav-dropdown">
 		          <MenuItem eventKey={3.1}>Profile</MenuItem>
 		          <MenuItem eventKey={3.2}>Bill</MenuItem>
