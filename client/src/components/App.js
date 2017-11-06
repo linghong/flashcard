@@ -13,7 +13,7 @@ import '../index.css';
 
 class App extends Component {
 	componentDidMount(){
-
+		this.props.fetchUser();
 	}
 
 	render(){
