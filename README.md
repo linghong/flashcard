@@ -7,6 +7,16 @@
 #### 3.Jest/Enzyme, Jest Snapshot are used for test.
 #### 4.Travis CI is used for continuous deployment.
 
+### dev.js File
+register a google+ API in your google account, make a file called dev.js and add the following code into the file: 
+module.exports={
+	googleClientID: <your API's google client id>,
+	googleClientSecret: <your API's google client secret>,
+	mongoURI: <your DB address>,	
+	cookieKey: <your cookieKey>
+};
+save the file in the config folder.
+
 ### Start
 install node_modules in serverside:
 ```javascript
