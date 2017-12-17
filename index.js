@@ -18,8 +18,8 @@ app.use(
 	// i.e., cookie session extracts cookie data, set it on the req.session,
 	//which is the user id from the databse
 	cookieSession({
-		maxAge:1*24*60*60*1000,
-		keys: [keys.cookieKey]
+		maxAge:4*60*60*1000, //miniseconds
+		keys: [keys.cookieKey] //for encrypt cookie
 	})
 );
 app.use(passport.initialize());

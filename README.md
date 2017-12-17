@@ -8,7 +8,7 @@
 #### 4.Travis CI is used for continuous deployment.
 
 ### dev.js File
-register a google+ API in your google account, make a file called dev.js and add the following code into the file: 
+register a google OAuth2 API in your google account for your development server and production server, make a file called dev.js and add the following code into the file: 
 module.exports={
 	googleClientID: <your API's google client id>,
 	googleClientSecret: <your API's google client secret>,
@@ -16,6 +16,10 @@ module.exports={
 	cookieKey: <your cookieKey>
 };
 save the file in the config folder.
+
+
+### For production site
+Also register a google OAuth2 API in your google account for production site, and add your google API crediential on the hosting server.
 
 ### Start
 install node_modules in serverside:
