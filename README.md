@@ -1,14 +1,22 @@
 
 ## Flashcard 
 
-### Techniques included
-#### 1.This project's client side was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Techniques used in the front end: React, Redux, react-bootstrap.
-#### 2.This project also has a Node.js serverside with MongoDB. Techniques includes node.js express.js, Google Auth2.0., mLab, passport.
-#### 3.Jest/Enzyme, Jest Snapshot are used for test.
-#### 4.Travis CI is used for continuous deployment.
+### Techniques 
+#### 1.This project's client side was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Techniques used in the front end: React, Redux, react-bootstrap, run at port 3000.
+#### 2.This project also has a Node.js serverside with MongoDB. Techniques includes node.js, express.js, mLab, passport, and run at port 5000.
+#### 3. Google Auth2.0. is used for authorization. In development environment, a proxy is also set up for derecting the http://localhost:3000/auth/google/callback to http:localhost:5000/auth/google/callback 
+#### 4. Jest/Enzyme, Jest Snapshot are used for test.
+#### 5. Travis CI is used for continuous deployment.
 
-### dev.js File
-register a google OAuth2 API in your google account for your development server and production server, make a file called dev.js and add the following code into the file: 
+### Prepare for development site
+#### Register Google OAuth2
+register a google OAuth2 API in your google account for your development server, be sure to list http://localhost:5000 under Authorized origins and 
+the below two links under the Authorized redirect URIs:
+http://localhost:5000/auth/google/callback
+http://localhost:3000/auth/google/callback
+#### Set up your MongoDB database in mLab for your local development site
+#### dev.js File
+make a file called dev.js and add the following code into the file: 
 module.exports={
 	googleClientID: <your API's google client id>,
 	googleClientSecret: <your API's google client secret>,
@@ -16,10 +24,6 @@ module.exports={
 	cookieKey: <your cookieKey>
 };
 save the file in the config folder.
-
-
-### For production site
-Also register a google OAuth2 API in your google account for production site, and add your google API crediential on the hosting server.
 
 ### Start
 install node_modules in serverside:
@@ -39,9 +43,23 @@ npm run dev
 
 It will start both client side and sever side servers. client side port:3000; server side port: 5000
 
-### Test Client Side
+### Run test for client side
 ```javascript
 cd client
 npm test
 ```
+### Prepare for production site
+#### Register A Google OAuth2 API for your production site
+#### Set up your MongoDB database in mLab for your production site
+#### Add your google API crediential on the hosting server.
 
+###Deploy 
+####Deploy to Heroku
+```javascript
+cd client
+npm run build
+cd ..
+git add .
+git commit -m "something new"
+git push heroku master
+```
