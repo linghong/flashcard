@@ -25,7 +25,7 @@ class App extends Component {
 					<Header />
 				     <Switch>
 				        <Route exact path='/' component={ Landing } />
-				        <Route path='/dashboard' component = {Dashboard } />
+				        <Route path='/dashboard' component = { Dashboard } />
 				        <Route path='/stack' component={ Stack } />
 				        <Route path='/stack_form' component={ StackForm } />
 				    </Switch>

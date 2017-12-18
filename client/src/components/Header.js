@@ -6,11 +6,11 @@ class Header extends Component {
   renderLog(){
     switch(this.props.auth){
       case null:
-        return ;
+        return 'logging';
       case false:
         return <a href="/auth/google">Login With Google</a>;
       default:
-        return <a>Logout</a>;
+        return <a href="/api/logout">Logout</a>;
     }
   }
 
@@ -19,7 +19,11 @@ class Header extends Component {
 		return (
       <nav className="nav-wrapper">
           <ul id="nav-mobile" className="left hide-on-med-and-down">
-            <li ><Link to='/'>Flash Card Pro</Link></li>
+            <li >
+            <Link 
+              to={this.props.auth?'/dashboard':'/'}
+              className="logo"
+              >Flash Card Pro</Link></li>
             <li ><Link to='/dashboard'>Dashboard</Link></li>
             <li><Link to='/stack_form'>Add New Card Stack</Link></li>
           </ul>  
