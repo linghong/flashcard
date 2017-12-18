@@ -64,9 +64,6 @@ git remote add heroku https://git.heroku.com/<youherokuappname>.git
 ```
 Then run the following code to deploy your code
 ```javascript
-cd client
-npm run build
-cd ..
 git add .
 git commit -m "something new"
 git push heroku master
