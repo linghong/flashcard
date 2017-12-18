@@ -10,7 +10,7 @@ import StackForm from './StackForm';
 import Landing from './Landing';
 
 import '../index.css';
-
+import 'materialize-css/dist/css/materialize.min.css';
 class App extends Component {
 	componentDidMount(){
 		this.props.fetchUser();
@@ -18,7 +18,7 @@ class App extends Component {
 
 	render(){
 		return (
-			<div className="container">
+			<div >
 			<BrowserRouter>
 				<div>
 					<Header />
