@@ -56,6 +56,14 @@ npm test
 ###Deploy 
 ####Deploy to Heroku
 ```javascript
+heroku create 
+```
+If you create the heroku app on your heroku site, you can run the following code to add the heroku app to you  git repo
+```javascript
+git remote add heroku https://git.heroku.com/<youherokuappname>.git
+```
+Then run the following code to deploy your code
+```javascript
 cd client
 npm run build
 cd ..

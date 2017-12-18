@@ -21,22 +21,20 @@ passport.deserializeUser((id, done)=>{
 });		
 
 passport.use(
-	new GoogleStrategy({
-		clientID: keys.googleClientID,
-		clientSecret: keys.googleClientSecret,
-		callbackURL: '/auth/google/callback',
-		proxy: true
-	}, (accessToken, refreshToken, profile, done)=>{
-		User.findOne({googleId: profile.id})
-		.then((existingUser)=>{		//return a promise
-			if(!existingUser){
-				new User({googleId: profile.id}) //create a new Model instance
-					.save()
-					.then(user=>done(null, user)); //fetch the saved user instance fron DB, first argument is err
-			} else{
-				done(null, existingUser);
-			}			
-		});
-	}	
-));
-
+  new GoogleStrategy(
+    {
+      clientID: keys.googleClientID,
+      clientSecret: keys.googleClientSecret,
+      callbackURL: '/auth/google/callback',
+      proxy: true
+    },
+    async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ googleId: profile.id });
+	    if (existingUser) {
+	        return done(null, existingUser);
+	    }
+	    const user = await new User({ googleId: profile.id }).save();
+	    done(null, user);
+    }
+  )
+);
