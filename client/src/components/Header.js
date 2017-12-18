@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 class Header extends Component {
-	render(){
-		return (
-  <nav>
-    <div className="nav-wrapper">
-      <ul id="nav-mobile" className="left hide-on-med-and-down">
-        <li ><Link to='/'>Flash Card Pro</Link></li>
-        <li ><Link to='/dashboard'>Dashboard</Link></li>
-        <li><Link to='/stack_form'>Add New Card Stack</Link></li>       
-      </ul>
-      <a href="/auth/google" className="right">Login With Google</a>
-    </div>
-  </nav>
+  renderLog(){
+    switch(this.props.auth){
+      case null:
+        return ;
+      case false:
+        return <a href="/auth/google">Login With Google</a>;
+      default:
+        return <a>Logout</a>;
+    }
+  }
 
+	render(){
+    console.log("header",this.props.auth);
+		return (
+      <nav className="nav-wrapper">
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li ><Link to='/'>Flash Card Pro</Link></li>
+            <li ><Link to='/dashboard'>Dashboard</Link></li>
+            <li><Link to='/stack_form'>Add New Card Stack</Link></li>
+          </ul>  
+          <ul className="right"> 
+            <li className="right">{this.renderLog()}</li>       
+          </ul>         
+      </nav>
 		);
 	};
 }
 
-export default Header;
+function mapStateToProps(state){
+  return { auth: state.auth };
+}
+
+export default connect(mapStateToProps, null)(Header);
