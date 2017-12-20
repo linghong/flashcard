@@ -21,11 +21,11 @@ class Header extends Component {
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li >
             <Link 
-              to={this.props.auth?'/stack_form':'/'}
+              to={this.props.auth?'/stackform':'/'}
               className="logo"
               >Flash Card Pro</Link></li>
             <li ><Link to='/dashboard'>Dashboard</Link></li>
-            <li><Link to='/stack_form'>Add New Card Stack</Link></li>
+            <li><Link to='/stackform'>Add New Card Stack</Link></li>
           </ul>  
           <ul className="right"> 
             <li className="right">{this.renderLog()}</li>       

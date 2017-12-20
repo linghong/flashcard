@@ -8,7 +8,7 @@ const Dashboard = () => {
     <div>
       <StackList />
       <hr />
-      <Link to='stack_form'><h4>Create a New Card Stack</h4></Link>
+      <Link to='/stackform'><h4>Create a New Card Stack</h4></Link>
     </div>
   )
 }

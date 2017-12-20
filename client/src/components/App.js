@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { fetchUser } from '../actions/index';
 import Header from './Header';
@@ -20,17 +20,17 @@ class App extends Component {
 		console.log("app",this.props.auth);
 		return (
 			<div >
-			<HashRouter>
+			<BrowserRouter>
 				<div>
 					<Header />
 				     <Switch>
 				        <Route exact path='/' component={ Landing } />
 				        <Route path='/dashboard' component = { Dashboard } />
 				        <Route path='/stack' component={ Stack } />
-				        <Route path='/stack_form' component={ StackForm } />
+				        <Route path='/stackform' component={ StackForm } />
 				    </Switch>
 		      	</div>
-		    </HashRouter>
+		    </BrowserRouter>
 		    </div>
 		);
 	}
