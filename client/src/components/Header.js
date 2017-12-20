@@ -29,12 +29,12 @@ class Header extends Component {
     console.log("header",this.props.auth);
 		return (
       <nav className="nav-wrapper">
-          <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <ul id="nav-mobile" className="left">
             <li >
             <Link 
               to={ this.props.auth?'/dashboard':'/' }
               className="logo"
-              >Flash Card Pro</Link></li>
+              >Vacubulary Card Pro</Link></li>
             <li >{ this.renderDashboard() }</li>
             <li><Link to='/stackform'>Add New Card Stack</Link></li>
           </ul>  

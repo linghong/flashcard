@@ -9,8 +9,7 @@ export class StackForm extends Component {
 
     this.state = { 
       title: '',
-      cards: [],
-      notice:null
+      cards: []
     }
   }
 
@@ -31,14 +30,14 @@ export class StackForm extends Component {
     this.setState({ cards });
   }
 
-  /*addStack() {
+  addStack() {
     this.props.addStack(this.state);
-  }*/
+  }
 
 
   saveForm=()=>{
     if(this.props.auth!==null && this.props.auth!==false){
-      this.props.addStack(this.state);
+      this.addStack();
     }
   }
   render() {
@@ -79,14 +78,9 @@ export class StackForm extends Component {
         <Button onClick={() => this.addCard()}>Add Card</Button>
         {' '}
         <Button onClick={this.saveForm()}>Save and Add the Stack</Button>
-        {this.state.notice}
       </div>
     )
   }
 }
 
-function mapStateToProps(state){
-  return { auth: state.auth };
-}
-
-export default connect(mapStateToProps, { addStack })(StackForm);
+export default connect(null, { addStack })(StackForm);
