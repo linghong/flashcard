@@ -75,9 +75,9 @@ export class StackForm extends Component {
           }
         </Form>
         <br />
-        <Button onClick={() => this.addCard()}>Add Card</Button>
+        <button onClick={() => this.addCard()} className="btn waves-effect waves-light btn-large  cyan darken-2">Add Card</button>
         {' '}
-        <Button onClick={this.saveForm()}>Save and Add the Stack</Button>
+        <button onClick={this.saveForm()} className="btn waves-effect waves-light btn-large  cyan darken-2" type="submit" name="action"> Save and Add the Stack</button>
       </div>
     )
   }
