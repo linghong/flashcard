@@ -21,7 +21,7 @@ class Header extends Component {
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li >
             <Link 
-              to={this.props.auth?'/dashboard':'/'}
+              to={this.props.auth?'/stack_form':'/'}
               className="logo"
               >Flash Card Pro</Link></li>
             <li ><Link to='/dashboard'>Dashboard</Link></li>
