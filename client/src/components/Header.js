@@ -30,11 +30,11 @@ class Header extends Component {
 		return (
       <nav className="nav-wrapper">
           <ul id="nav-mobile" className="left">
-            <li >
+            <li className="logo">
             <Link 
               to={ this.props.auth?'/dashboard':'/' }
               className="logo"
-              >Vacubulary Card Pro</Link></li>
+              >Vacubulary Pro</Link></li>
             <li >{ this.renderDashboard() }</li>
             <li><Link to='/stackform'>Add New Card Stack</Link></li>
           </ul>  

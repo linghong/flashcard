@@ -1,5 +1,6 @@
 body {
-  padding: 5%;
+  padding-left: 2%;
+  padding-right:2%;
   text-align: center;
 }
 
@@ -38,6 +39,15 @@ body {
   animation-name: fade-in;
   animation-duration: 1s;
   visibility: visible;
+}
+
+.logo{
+  font-size: 1.5em;
+  font-weight:600;
+}
+
+section{
+padding: 0.5em 1em 2em 1em;
 }
 
 @keyframes fade-in {
