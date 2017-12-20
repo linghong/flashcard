@@ -35,7 +35,7 @@ class Header extends Component {
               to={ this.props.auth?'/dashboard':'/' }
               className="logo"
               >Flash Card Pro</Link></li>
-            <li >{ this.renderDahboard() }</li>
+            <li >{ this.renderDashboard() }</li>
             <li><Link to='/stackform'>Add New Card Stack</Link></li>
           </ul>  
           <ul className="right"> 
