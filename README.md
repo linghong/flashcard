@@ -53,8 +53,8 @@ npm test
 #### Set up your MongoDB database in mLab for your production site
 #### Add your google API crediential on the hosting server.
 
-###Deploy 
-####Deploy to Heroku
+### Deploy 
+#### Deploy to Heroku
 ```javascript
 heroku create 
 ```
@@ -68,3 +68,8 @@ git add .
 git commit -m "something new"
 git push heroku master
 ```
+### View
+#### Local 
+Go to http://localhost:3000
+#### OnLine
+Go To https://flash-card-pro.herokuapp.com
