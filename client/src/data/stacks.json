@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Computer Science Basics",
+    "title": "Words For Computer Science Basics",
     "id": 1,
     "cards": [
       { "id": 0, "prompt": "A single line of code", "answer": "statement" },
