@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { fetchUser } from '../actions/index';
 import Header from './Header';
@@ -20,7 +20,7 @@ class App extends Component {
 		console.log("app",this.props.auth);
 		return (
 			<div >
-			<BrowserRouter>
+			<HashRouter>
 				<div>
 					<Header />
 				     <Switch>
@@ -30,7 +30,7 @@ class App extends Component {
 				        <Route path='/stack_form' component={ StackForm } />
 				    </Switch>
 		      	</div>
-		    </BrowserRouter>
+		    </HashRouter>
 		    </div>
 		);
 	}
