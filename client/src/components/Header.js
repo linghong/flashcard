@@ -14,6 +14,17 @@ class Header extends Component {
     }
   }
 
+   renderDashboard(){
+    switch(this.props.auth){
+      case null:
+        return '';
+      case false:
+        return "";
+      default:
+        return <Link to='/dashboard'>Dashboard</Link>;
+    }
+  }
+
 	render(){
     console.log("header",this.props.auth);
 		return (
@@ -21,14 +32,14 @@ class Header extends Component {
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li >
             <Link 
-              to={this.props.auth?'/stackform':'/'}
+              to={ this.props.auth?'/dashboard':'/' }
               className="logo"
               >Flash Card Pro</Link></li>
-            <li ><Link to='/dashboard'>Dashboard</Link></li>
+            <li >{ this.renderDahboard() }</li>
             <li><Link to='/stackform'>Add New Card Stack</Link></li>
           </ul>  
           <ul className="right"> 
-            <li className="right">{this.renderLog()}</li>       
+            <li className="right">{ this.renderLog() }</li>       
           </ul>         
       </nav>
 		);
