@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import { addStack } from '../actions';
 
 export class StackForm extends Component {

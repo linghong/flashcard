@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import StackList from './StackList';
-import Header from './Header';
 
 const Dashboard = () => {
   return (
