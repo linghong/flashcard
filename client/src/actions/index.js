@@ -15,6 +15,14 @@ export const fetchUser = () => async dispatch => {
   });
 };
 
+export const handleToken = (token)=> async dispatch =>{
+  const res = await axio.post('/api/stripe', token);
+  dispatch({
+    type: FETCH_USER, 
+    payload: res.data
+  });
+}
+
 export function setStack(stack) {
   return {
     type: SET_STACK,
