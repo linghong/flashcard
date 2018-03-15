@@ -27,12 +27,16 @@ module.exports={
 save the file in the config folder.
 
 #### STRIPE
-1. add Publishable Key and Secret Key after cookieKey into the dev.js file
+1. server side
+add Publishable Key and Secret Key after cookieKey into the dev.js file
 module.exports={
 	....,
 	stripePublishableKey: "<your Stripe Publishable Key>",
 	stripeSecretKey: "<your Stripe Secret Key>"
 };
+2. client side
+add the floowing code, and save it as .env.development under the client folder
+REACT_APP_STRIPE_KEY = <your Stripe Publishable Key>
 
 ### Start Development Environment
 install node_modules in serverside:
@@ -66,6 +70,8 @@ npm test
 #### Stripe
 1. Set up Stripe account
 2. Register Stripe Publishable Key and Secret Key on the hosting server
+3. Make an .env.production file inside the client folder, add the fllowing code:
+REACT_APP_STRIPE_KEY = <your Stripe Publishable Key>
 
 ### Deploy 
 #### Deploy to heroku
