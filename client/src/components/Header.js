@@ -12,22 +12,11 @@ class Header extends Component {
         return <a href="/auth/google">Login With Google</a>;
       default:
         return [
-        <li id="1">{ this.renderDashboard() }</li>,
+        <li id="1"><Link to='/dashboard'>Dashboard</Link></li>,
         <li id ="2"><Link to='/stackform'>Add New Card Stack</Link></li>,
         <li id="3'"><Payment/> </li>,
         <li id="4"><a href="/api/logout">Logout</a></li>
         ];
-    }
-  }
-
-   renderDashboard(){
-    switch(this.props.auth){
-      case null:
-        return '';
-      case false:
-        return "";
-      default:
-        return <Link to='/dashboard'>Dashboard</Link>;
     }
   }
 
