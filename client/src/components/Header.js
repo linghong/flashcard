@@ -9,13 +9,13 @@ class Header extends Component {
       case null:
         return 'logging';
       case false:
-        return <a href="/auth/google">Login With Google</a>;
+        return <a href="/auth/google">LOGIN WITH GOOGLE</a>;
       default:
         return [
-        <li id="1"><Link to='/dashboard'>Dashboard</Link></li>,
-        <li id ="2"><Link to='/stackform'>Add New Card Stack</Link></li>,
-        <li id="3'"><Payment/> </li>,
-        <li id="4"><a href="/api/logout">Logout</a></li>
+        <li key = "1"><Link to='/dashboard'>DASHBOARD</Link></li>,
+        <li key = "2"><Link to='/stackform'>ADD NEW CARD STACK</Link></li>,
+        <li key = "3"><Payment/> </li>,
+        <li key = "4"><a href="/api/logout">LOGOUT</a></li>
         ];
     }
   }
