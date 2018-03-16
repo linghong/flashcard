@@ -27,6 +27,7 @@ app.use(passport.session());
 
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 //make express handle production correctly
 if(process.env.NODE_ENV === 'production'){
