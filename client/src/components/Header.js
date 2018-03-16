@@ -14,8 +14,9 @@ class Header extends Component {
         return [
         <li key = "1"><Link to='/dashboard'>DASHBOARD</Link></li>,
         <li key = "2"><Link to='/stackform'>ADD NEW CARD STACK</Link></li>,
-        <li key = "3"><Payment/> </li>,
-        <li key = "4"><a href="/api/logout">LOGOUT</a></li>
+        <li key = "3">CREDITS: { this.props.auth.credits } </li>,
+        <li key = "4" style ={{margin: '0 10px'}}><Payment/> </li>,
+        <li key = "5"><a href="/api/logout">LOGOUT</a></li>
         ];
     }
   }
