@@ -2,6 +2,7 @@ import React, { Componet } from 'react';
 import { shallow } from 'enzyme';
 import Card from './Card';
 import renderer from 'react-test-renderer';
+import '../setupTests.js';
 
 const props ={
 	card: { prompt: 'test prompt', answer: 'test answer'}

@@ -2,6 +2,9 @@
 
 exports[`snapshot test for StackList 1`] = `
 <div>
+  <h3>
+    List of Flash Cards
+  </h3>
   <a
     href="/stack"
     onClick={[Function]}

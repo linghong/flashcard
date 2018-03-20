@@ -19,13 +19,13 @@ exports[`snapshot test for Dashboard 1`] = `
       onClick={[Function]}
     >
       <h4>
-        Computer Science Basics
+        Words For Computer Science Basics
       </h4>
     </a>
   </div>
   <hr />
   <a
-    href="stack_form"
+    href="/stackform"
     onClick={[Function]}
   >
     <h4>

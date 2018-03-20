@@ -4,13 +4,14 @@ import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import { StackForm } from  './StackForm';
 import renderer from 'react-test-renderer';
+import '../setupTests.js';
 
 const chTitle = 'change title';
 const chPrompt ='change prompt';
 const chAnswer = 'change answer';
 
 describe('StackForm', ()=>{
-	const stackForm = shallow(<StackForm />);
+	const stackForm = shallow(<StackForm auth = { true } />);
 
 	const changeFormControl=(index, val)=>{
 		stackForm.find('FormControl').at(index).simulate('change', {target: {value: val}});

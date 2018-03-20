@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { stacks } from '../data/fixtures';
 import { StackList } from './StackList';
+import '../setupTests.js';
 
 const props = { stacks };
 

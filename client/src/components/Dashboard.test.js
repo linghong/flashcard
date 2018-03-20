@@ -7,6 +7,7 @@ import rootReducer from '../reducers';
 
 import { shallow } from 'enzyme';
 import Dashboard from './Dashboard';
+import '../setupTests.js';
 
 describe ('Dashboard', ()=>{
 	const dashboard = shallow(<Dashboard/>);
