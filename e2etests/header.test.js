@@ -1,9 +1,21 @@
 const puppeteer = require('puppeteer');
 
-test('we can launch a browser', async ()=>{
+let browser, page
+
+beforeEach(async () => {
 	jest.setTimeout(10000)
-	const browser = await puppeteer.launch({
+	browser = await puppeteer.launch({
 		headless: false
 	});
-	const page = await browser.newPage();
+	page = await browser.newPage();
+	await page.goto('localhost:3000');
+});
+
+afterEach(async () =>{
+	await browser.close();
+});
+
+test('The browser logo text is correct', async ()=>{	
+	const text = await page.$eval('a.logo', el => el.innerHTML);
+	expect(text).toEqual('Vacubulary Pro')
 })
