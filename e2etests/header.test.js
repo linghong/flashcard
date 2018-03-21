@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 let browser, page
 
 beforeEach(async () => {
-	jest.setTimeout(10000)
+	jest.setTimeout(100000)
 	browser = await puppeteer.launch({
 		headless: false
 	});
@@ -15,7 +15,14 @@ afterEach(async () =>{
 	await browser.close();
 });
 
-test('The browser logo text is correct', async ()=>{	
+test('The text of the logo is correct', async ()=>{	
 	const text = await page.$eval('a.logo', el => el.innerHTML);
 	expect(text).toEqual('Vacubulary Pro')
-})
+});
+
+test('clicking login starts the OAuth2 flow', async () =>{
+	const text = await page.click('.right a');
+	const url = await page.url();
+	expect(url).toMatch(/accounts\.google\.com/);
+});
+
