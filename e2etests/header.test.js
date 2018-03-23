@@ -50,9 +50,7 @@ test.only('when signed in, it will display logout button', async () =>{
 	//after set cookie, then need to refresh the browser
 	await page.goto('localhost:3000');
 
+	await page.waitFor('a[href="/api/logout"]');
 	const text = await page.$eval('a[href="/api/logout"]', el =>el.innerHTML);
 	expect(text).toEqual('LOGOUT');
 });
-
-//session=eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNWEzNWVlOGE1NDY1OTQ0YWJkZmU1NjQ5In19
-//session.sig=AGfnDpnNDG41qcOnLoXe6Ebw4LQ
