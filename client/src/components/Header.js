@@ -7,9 +7,9 @@ class Header extends Component {
   renderLog(){
     switch(this.props.auth){
       case null:
-        return 'logging';
+        return <li>'logging'</li>;
       case false:
-        return <a href="/auth/google">LOGIN WITH GOOGLE</a>;
+        return <li><a href="/auth/google">LOGIN WITH GOOGLE</a></li>;
       default:
         return [
         <li key = "1"><Link to='/dashboard'>DASHBOARD</Link></li>,

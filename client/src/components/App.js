@@ -17,7 +17,6 @@ class App extends Component {
 	}
 
 	render(){
-		console.log("app",this.props.auth);
 		return (
 			<div >
 			<BrowserRouter>
