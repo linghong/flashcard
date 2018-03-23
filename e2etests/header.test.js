@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const sessionFactory = require('./factories/sessionFactory')
 
 let browser, page
 
@@ -12,7 +13,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () =>{
-	//await browser.close();
+	await browser.close();
 });
 
 test('The text of the logo is correct', async ()=>{	
@@ -26,26 +27,11 @@ test('clicking login starts the OAuth2 flow', async () =>{
 	expect(url).toMatch(/accounts\.google\.com/);
 });
 
-test.only('when signed in, it will display logout button', async () =>{
-	const keys = require('../config/keys');
-
-	//session
-	const sessionObject = {
-		passport: {
-			user: keys.userTestId
-		}
-	};
-	const buffer = require('safe-buffer').Buffer;
-	const sessionString = Buffer.from(JSON.stringify(sessionObject))
-								.toString('base64');
-
-	//session.sig
-	const Keygrip = require('keygrip');
-	const keygrip = new Keygrip([keys.cookieKey]);
-	const sig = keygrip.sign('session=' + sessionString);
+test('when signed in, it will display logout button', async () =>{
+	const {session, sig } = sessionFactory();
 
 	//set session and session.sig cookies
-	await page.setCookie({ name: 'session', value: sessionString });
+	await page.setCookie({ name: 'session', value: session });
 	await page.setCookie({ name: 'session.sig', value: sig });
 	//after set cookie, then need to refresh the browser
 	await page.goto('localhost:3000');
