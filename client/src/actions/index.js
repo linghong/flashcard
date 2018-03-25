@@ -44,3 +44,8 @@ export function addStack(stack) {
     stack
   }
 }
+
+export function saveStack = (values) => async dispatch => {
+  const res = await axios.post('api/stack', values);
+  dispatch({ type: FETCH_USER, payload: res.data });
+}
