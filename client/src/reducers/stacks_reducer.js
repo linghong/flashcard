@@ -1,4 +1,4 @@
-import { LOAD_STACKS, ADD_STACK } from '../actions';
+  import { LOAD_STACKS, ADD_STACK } from '../actions';
 
 export default function stacks(state = [], action) {
   switch(action.type) {

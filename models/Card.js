@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const cardSchema = new Schema({
-	prompt: string,
-	answer: string
+	prompt: String,
+	answer: String
 });
 
 module.exports = cardSchema;

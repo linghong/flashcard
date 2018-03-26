@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-import CardSchema = require('./Card');
+const CardSchema = require('./Card');
 
 const stackSchema = new Schema({
-	title: string,
+	title: String,
 	cards: [CardSchema],
-	_user: { type: Schema.Type.ObjectId, ref: 'User'},
+	_user: { type: Schema.Types.ObjectId, ref: 'User'},
 	generated: Date
 });
 
