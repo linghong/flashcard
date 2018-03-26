@@ -27,7 +27,6 @@ export class StackForm extends Component {
     this.props.addStack(this.state);
     if(this.props.auth!==null && this.props.auth!==false){
      this.props.saveStack(this.state);
-     console.log("state", this.state);
     }
   }
 
