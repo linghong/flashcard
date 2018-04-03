@@ -1,9 +1,9 @@
-  import { LOAD_STACKS, ADD_STACK } from '../actions';
+  import { FETCH_STACKS, ADD_STACK } from '../actions/index';
 
 export default function stacks(state = [], action) {
   switch(action.type) {
-    case LOAD_STACKS:
-      return action.stacks;
+    case FETCH_STACKS:
+      return action.payload;
     case ADD_STACK:
       return [...state, {...action.stack, id: state.length }];
     default:

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const SET_STACK = 'SET_STACK';
-export const LOAD_STACKS = 'LOAD_STACKS';
+export const FETCH_STACKS = 'FETCH_STACKS';
 export const ADD_STACK = 'ADD_STACK';
 
 export const FETCH_USER = 'FETCH_USER';
@@ -40,11 +40,12 @@ export function setStack(stack) {
   };
 }
 
-export function loadStacks(stacks) {
-  return {
-    type: LOAD_STACKS,
-    stacks
-  }
+export function fetchStacks() {
+  const res = await axios.get('/api/stack');
+  dispatch({
+     type: FETCH_STACKS,
+    payload: res.data
+  });
 }
 
 export function addStack(stack) {
