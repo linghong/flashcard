@@ -24,9 +24,9 @@ export const handleToken = token => async dispatch =>{
   });
 }
 
-export const saveStack = values => async dispatch => {
+export const saveStack = (values, history) => async dispatch => {
   const res = await axios.post('/api/stack', values);
-  console.log("stack values", values);
+  history.push('/dashboard');
   dispatch({ 
     type: FETCH_USER, 
     payload: res.data 

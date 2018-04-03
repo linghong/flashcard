@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import { addStack, saveStack } from '../actions';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 export class StackForm extends Component {
   constructor() {
@@ -14,7 +15,6 @@ export class StackForm extends Component {
     }
   }
 
-
   addCard() {
     const { cards } = this.state;
 
@@ -23,10 +23,10 @@ export class StackForm extends Component {
     this.setState({ cards });
   }
 
-  addStack() {
+  addStack(history) {
     this.props.addStack(this.state);
     if(this.props.auth!==null && this.props.auth!==false){
-     this.props.saveStack(this.state);
+     this.props.saveStack(this.state, history);
     }
   }
 
@@ -77,11 +77,11 @@ export class StackForm extends Component {
         </div>
         <div className="right">
         <Link to="/dashboard" className="btn waves-effect waves-light btn-large  cyan darken-3 left">Cancel</Link>
-        <button onClick={()=>this.addStack()} className="btn waves-effect waves-light btn-large  cyan darken-3 right" type="submit" name="action"> Save and Add the Stack</button>
+        <button onClick={()=>this.addStack(this.props.history)} className="btn waves-effect waves-light btn-large  cyan darken-3 right" type="submit" name="action"> Save and Add the Stack</button>
         </div>
       </div>
     )
   }
 }
 
-export default connect(null, { addStack, saveStack })(StackForm);
+export default connect(null, { addStack, saveStack })(withRouter(StackForm));

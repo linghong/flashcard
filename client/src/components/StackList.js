@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import stacks from '../data/stacks.json';
 import { setStack, fetchStacks } from '../actions';
 
 export class StackList extends Component {
