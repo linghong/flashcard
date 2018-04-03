@@ -5,9 +5,13 @@ const requireCredits = require('../middlewares/requireCredits');
 const Stack = mongoose.model('stack');
 
 module.exports = app =>{
+	app.get('/api/stack', requireLogin, async (req,res)=>{
+		const stack = await Stack.find({_user: req.user.id});
+		res.send(stack);
+	});
+
 	app.post('/api/stack', requireLogin, requireCredits, async (req, res) =>{
 		const { title, cards }  = req.body;
-		console.log("stack", req.body);
 		const stack = new Stack({
 			title,
 			cards: cards.map(card => { return { 
@@ -29,4 +33,8 @@ module.exports = app =>{
 		}
 		
 	});
+
+	app.get('/api/stack/current_user', (req, res) => {
+    res.send(req.user);
+  });
 };
