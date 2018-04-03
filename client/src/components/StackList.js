@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import stacks from '../data/stacks.json';
-import { setStack, loadStacks } from '../actions';
+import { setStack, fetchStacks } from '../actions';
 
 export class StackList extends Component {
   componentDidMount() {
-    if (this.props.stacks.length === 0) this.props.loadStacks(stacks);
+    if (this.props.stacks.length === 0) this.props.fetchStacks();
   }
 
   render() {
@@ -31,8 +31,8 @@ export class StackList extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { stacks: state.stacks };
+function mapStateToProps({stacks}) {
+  return { stacks };
 }
 
-export default connect(mapStateToProps, { setStack, loadStacks })(StackList);
+export default connect(mapStateToProps, { setStack, fetchStacks })(StackList);

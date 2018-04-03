@@ -40,7 +40,7 @@ export function setStack(stack) {
   };
 }
 
-export function fetchStacks() {
+export const fetchStacks = () =>async dispatch => {
   const res = await axios.get('/api/stack');
   dispatch({
      type: FETCH_STACKS,
