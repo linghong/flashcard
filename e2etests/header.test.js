@@ -9,7 +9,8 @@ beforeEach(async () => {
 		headless: false
 	});
 	page = await browser.newPage();
-	await page.goto('localhost:3000');
+	//need to add http://, otherwise it won't work in ci
+	await page.goto('http://localhost:3000');
 });
 
 afterEach(async () =>{
