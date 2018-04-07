@@ -31,7 +31,7 @@
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "puppeteer": "^1.2.0",
+    "puppeteer": "^1.0.0",
     "stripe": "^5.5.0"
   }
 }
