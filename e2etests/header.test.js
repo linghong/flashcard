@@ -11,7 +11,6 @@ beforeEach(async () => {
 		headless: false
 	});*/
 	browser = await puppeteer.launch({
-		headless: false,
 		args: ['--no-sandbox', '--disable-setuid-sandbox']
 	});
 	page = await browser.newPage();
