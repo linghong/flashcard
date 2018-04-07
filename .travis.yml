@@ -14,6 +14,9 @@ cache:
 install: 
   - npm install
   - npm run build
+sudo: required
+addons: 
+  chrome: stable
 script: 
   - nohup npm run start &
   - sleep 3
