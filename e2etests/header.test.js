@@ -6,9 +6,11 @@ let browser, page
 
 beforeEach(async () => {
 	jest.setTimeout(100000)
+	/*the sandbox method currently does not work in travis ci.
 	browser = await puppeteer.launch({
 		headless: false
-	});
+	});*/
+	browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 	page = await browser.newPage();
 	//need to add http://, otherwise it won't work in ci
 	await page.goto('http://localhost:3000');
