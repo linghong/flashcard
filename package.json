@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./e2etests/setup.js"
+  },
   "engines": {
     "node": "8.1.1",
     "npm": "5.0.3"
