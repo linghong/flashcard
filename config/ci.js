@@ -6,4 +6,4 @@ module.exports={
 	stripePublishableKey: 'pk_test_MVHSh3K62DVTNxDm4vtmdnzl',
 	stripeSecretKey: 'sk_test_lDTbtO1ajhe2wFqyRvTXZOHI',
 	redisUrl:'redis://127.0.0.1:6379'
-};}
+};
