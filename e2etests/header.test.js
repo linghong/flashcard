@@ -14,7 +14,7 @@ afterEach(async () =>{
 });
 
 test('The text of the logo is correct', async ()=>{	
-	const text = await page.$eval('a.logo', el => el.innerHTML);
+	const text = await page.getContent('a.logo');
 	expect(text).toEqual('Vacubulary Pro')
 });
 
