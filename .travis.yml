@@ -5,9 +5,9 @@ dist: trusty
 sudo: required
 addons:
   chrome: stable
-services:
-  - mongodb
-  - redis-server
+before_script:
+    - "sudo chown root /opt/google/chrome/chrome-sandbox"
+    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 env:
   - NODE_ENV=ci PORT=3000
 cache:
