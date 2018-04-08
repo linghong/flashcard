@@ -5,9 +5,12 @@ dist: trusty
 sudo: required
 addons:
   chrome: stable
+services:
+  - mongodb  
 before_script:
     - "sudo chown root /opt/google/chrome/chrome-sandbox"
     - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+    - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 env:
   - NODE_ENV=ci PORT=3000
 cache:
