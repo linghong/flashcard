@@ -5,6 +5,9 @@ dist: trusty
 sudo: required
 addons:
   chrome: stable
+before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 services:
   - mongodb  
 before_script:
@@ -23,4 +26,4 @@ install:
 script: 
   - nohup npm run start &
   - sleep 3
-  - npm run test
+  - npm run test 
