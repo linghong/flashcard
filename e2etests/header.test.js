@@ -5,7 +5,8 @@ const userFactory = require('./factories/userFactory');
 let browser, page
 
 beforeEach(async () => {
-	jest.setTimeout(30000)
+	jest.setTimeout(30000);
+
 	//the sandbox method currently does not work in travis ci.
 	browser = await puppeteer.launch({
 		headless: false

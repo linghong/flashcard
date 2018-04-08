@@ -15,7 +15,7 @@
     "server": "nodemon index.js --ignore tests",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest e2etests",
+    "test": "jest run e2etests",
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "heroku-postbuild": "npm run build"
   },
@@ -31,7 +31,7 @@
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "puppeteer": "^1.0.0",
+    "puppeteer": "^1.2.0",
     "stripe": "^5.5.0"
   }
 }
