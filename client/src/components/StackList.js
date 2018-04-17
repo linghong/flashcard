@@ -14,10 +14,11 @@ export class StackList extends Component {
         <h3>List of Flash Cards</h3>
         {
           this.props.stacks.map(stack => {
+            console.log(stack);
             return (
               <Link 
                 to='/stack' 
-                key={stack.id} 
+                key={stack._id} 
                 onClick={() => this.props.setStack(stack)}
               >
                 <h4>{stack.title}</h4>
