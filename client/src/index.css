@@ -49,6 +49,7 @@ body {
 nav {
     height: 30px;
     line-height: 30px;
+    padding-right: 1em;
 }
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
@@ -63,6 +64,10 @@ nav .button-collapse i {
 
 nav .brand-logo { 
     font-size: 1.6rem; 
+}
+
+label {
+  font-size: 1.25em !important;
 }
 
 @media only screen and (min-width: 601px){
