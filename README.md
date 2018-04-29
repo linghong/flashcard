@@ -38,6 +38,11 @@ module.exports={
 add the floowing code, and save it as .env.development under the client folder
 REACT_APP_STRIPE_KEY = <your Stripe Publishable Key>
 
+###AWS Setup
+1. go to AWS console, and create a S3 bucket.
+2. create a new AIM policy and a new AIM user, attach the AIM policy to the user.
+3. add the accessKeyId and secertAccessKey to dev.js file.
+
 ### Start Development Environment
 install node_modules in serverside:
 ```javascript

@@ -30,6 +30,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/stackRoutes')(app);
+require('./routes/uploadRoutes')(app);
 
 //make express handle production correctly
 if(['production', 'ci'].includes(process.env.NODE_ENV)){
